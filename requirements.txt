@@ -1,0 +1,10 @@
+gradio
+opencv-python
+pillow
+torch
+torchvision
+numpy
+retina-face
+insightface
+pymongo            
+scikit-learn
