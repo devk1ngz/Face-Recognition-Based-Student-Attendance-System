@@ -1,0 +1,111 @@
+/* --- TỔNG THỂ --- */
+QWidget {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+/* --- SIDEBAR --- */
+QFrame#sidebar {
+    background-color: white;
+    border-right: 1px solid #eaeff5;
+}
+/* Profile nhỏ gọn hơn */
+QLabel#profile_name { 
+    color: #2c3e50; 
+    font-size: 20px; 
+    font-weight: 800; 
+    margin-bottom: 2px;
+    line-height: 1.2; 
+}
+QLabel#profile_sub { color: #7f8c8d; font-size: 15px; font-weight: 600; }
+
+QLabel#sidebar_title {
+    color: #95a5a6; font-size: 15px; font-weight: 700;
+    text-transform: uppercase; margin-bottom: 5px; letter-spacing: 0.5px;
+}
+
+/* Ô TÌM KIẾM (MỚI) */
+QLineEdit#course_search {
+    border: 1px solid #dfe6e9;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+}
+QLineEdit#course_search:focus {
+    border: 1px solid #3498db;
+    background-color: white;
+}
+
+/* Nút chọn lớp */
+QPushButton#sidebar_btn {
+    background-color: transparent;
+    color: #2c3e50;
+    text-align: left;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+}
+QPushButton#sidebar_btn:hover { background-color: #f1f2f6; }
+QPushButton#sidebar_btn:checked {
+    background-color: #e3f2fd; color: #1976d2; font-weight: 600;
+}
+
+/* Nút Đăng xuất */
+QPushButton#btn_logout {
+    background-color: white; color: #e74c3c;
+    border: 1px solid #fadbd8; border-radius: 15px;
+    padding: 8px; font-weight: bold;
+}
+QPushButton#btn_logout:hover { background-color: #e74c3c; color: white; }
+
+
+/* --- HEADER INFO --- */
+QLabel#school_name { 
+    color: #7f8c8d; 
+    font-size: 17px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+QLabel#header_title { 
+    font-size: 32px; 
+    font-weight: 900;
+    color: #2c3e50;
+    padding-top: 5px; 
+}
+
+/* --- TABLE AREA --- */
+QFrame#table_card {
+    background-color: white; border-radius: 10px; border: 1px solid #ecf0f1;
+}
+QHeaderView::section {
+    background-color: white;
+    color: #7f8c8d;
+    padding: 12px 5px;            
+    border: none;
+    border-bottom: 2px solid #eaeff5;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;     
+}
+QTableWidget::item { padding: 5px; border-bottom: 1px solid #f8f9fa; }
+
+/* Nút Báo cáo */
+QPushButton#btn_report {
+    background-color: #fff3e0;      
+    color: #ff2400;                 
+    border: 1px solid #ff2400;
+    border-radius: 15px;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 13px;
+    min-width: 120px;
+}
+QPushButton#btn_report:hover {
+    background-color: #ff2400;     
+    color: white;
+}

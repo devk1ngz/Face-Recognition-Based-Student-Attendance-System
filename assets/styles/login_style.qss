@@ -1,0 +1,135 @@
+/* --- TỔNG THỂ --- */
+QWidget {
+    background-color: #eff2f7;
+    font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
+}
+
+QLabel {
+    background-color: transparent; 
+}
+
+/* --- CARD CONTAINER --- */
+QFrame#login_card {
+    background-color: #ffffff;
+    border-radius: 20px; 
+    min-width: 360px;
+    max-width: 360px;
+    border: 1px solid #ffffff;
+}
+
+/* --- TEXT STYLES --- */
+QLabel#title {
+    font-size: 22px;
+    font-weight: 800; 
+    color: #2c3e50;
+    margin-top: 5px;
+}
+
+QLabel#subtitle {
+    font-size: 13px;
+    /* color: #95a5a6; */
+    margin-bottom: 5px;
+}
+
+QLabel#footer {
+    color: #bdc3c7;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+/* --- INPUT FIELDS --- */
+QLineEdit {
+    border: 2px solid #eaeff5; 
+    border-radius: 10px;
+    padding: 0 15px; 
+    background-color: #fbfcfd;
+    font-size: 14px;
+    color: #34495e;
+}
+
+
+QLineEdit:focus {
+    border: 2px solid #3498db; 
+    background-color: #ffffff;
+}
+
+/* --- PRIMARY BUTTON (Đăng nhập) --- */
+QPushButton#btn_login {
+    background-color: #2980b9; 
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    margin-top: 10px;
+}
+
+QPushButton#btn_login:hover {
+    background-color: #3498db; 
+}
+
+QPushButton#btn_login:pressed {
+    background-color: #1f618d; 
+    padding-top: 2px; 
+}
+
+/* --- SECONDARY BUTTON (Đăng ký) --- */
+QPushButton#btn_register {
+    background-color: transparent;
+    color: #7f8c8d;
+    border: none;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+QPushButton#btn_register:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+
+QLineEdit {
+    border: 2px solid #eaeff5;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 35px; 
+    background-color: #fbfcfd;
+    font-size: 14px;
+    color: #34495e;
+}
+
+QLineEdit:focus {
+    border: 2px solid #3498db;
+    background-color: #ffffff;
+}
+
+/* --- RADIO BUTTON (Chọn vai trò) --- */
+QRadioButton {
+    font-size: 14px;
+    color: #34495e;
+    spacing: 8px; 
+    padding: 5px;
+}
+
+/* Hình tròn mặc định (Chưa chọn) */
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 9px; 
+    border: 2px solid #bdc3c7; 
+    background-color: white; 
+}
+
+/* Hiệu ứng khi di chuột vào (Hover) */
+QRadioButton::indicator:hover {
+    border: 2px solid #3498db; 
+}
+
+/* Trạng thái ĐÃ CHỌN (Checked) */
+QRadioButton::indicator:checked {
+    background-color: #2980b9; 
+    border: 4px solid white;  
+    outline: 1px solid #2980b9;
+}

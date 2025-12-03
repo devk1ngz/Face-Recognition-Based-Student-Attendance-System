@@ -1,0 +1,81 @@
+/* --- TỔNG THỂ --- */
+QWidget {
+    background-color: #eff2f7; 
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+QLabel {
+    background-color: transparent; 
+}
+
+/* --- CARD CONTAINER --- */
+QFrame#register_card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    min-width: 400px; 
+    max-width: 400px;
+    border: 1px solid #ffffff;
+}
+
+/* --- TEXT --- */
+QLabel#title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-top: 10px;
+}
+
+QLabel#subtitle {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+/* --- INPUT FIELDS --- */
+QLineEdit {
+    border: 2px solid #eaeff5;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 35px; 
+    font-size: 14px;
+    background-color: #fbfcfd;
+    color: #34495e;
+}
+
+QLineEdit:focus {
+    border: 2px solid #3498db; 
+    background-color: #ffffff;
+}
+
+/* --- NÚT ĐĂNG KÝ (Primary) --- */
+QPushButton#btn_register {
+    background-color: #27ae60;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+}
+
+QPushButton#btn_register:hover {
+    background-color: #2ecc71;
+}
+
+QPushButton#btn_register:pressed {
+    background-color: #219150;
+    padding-top: 2px;
+}
+
+/* --- NÚT QUAY LẠI (Link style) --- */
+QPushButton#btn_back {
+    background-color: transparent;
+    color: #7f8c8d;
+    border: none;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+QPushButton#btn_back:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
