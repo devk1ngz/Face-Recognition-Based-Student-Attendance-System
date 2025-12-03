@@ -66,7 +66,7 @@ Face-Recognition-Attendance/
 
 Hệ thống hoạt động dựa trên luồng xử lý dữ liệu (pipeline) gồm 4 giai đoạn chính, kết hợp giữa mô hình phát hiện (Detection) và nhận diện (Recognition):
 
-![Face Recognition Pipeline Diagram](results/pipeline_flow.png)
+<img src="results/pipeline_flow.png" alt="Attendance Success" width="30%">
 
 1.  **Face Detection:** Quét toàn bộ khung hình để tìm vị trí khuôn mặt.
 2.  **Face Alignment:** Căn chỉnh khuôn mặt dựa trên 5 điểm mốc (mắt, mũi, miệng) để chuẩn hóa góc nhìn.
