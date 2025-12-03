@@ -10,8 +10,6 @@
 
 **Hệ thống điểm danh sinh viên thông minh sử dụng Deep Learning với độ chính xác cao.**
 
-[Xem Demo](#-demo-hình-ảnh-screenshots) • [Cài Đặt](#%EF%B8%8F-cài-đặt-installation) • [Cách Dùng](#-hướng-dẫn-sử-dụng-user-guide)
-
 </div>
 
 ---
@@ -66,17 +64,37 @@ Face-Recognition-Attendance/
 
 ## 🧠 Nguyên Lý Hoạt Động (Workflow)
 
-Hệ thống hoạt động dựa trên pipeline xử lý ảnh 4 bước:
+flowchart LR
+    %% Định nghĩa Style
+    classDef input fill:#f9f,stroke:#333,stroke-width:2px,color:black;
+    classDef ai fill:#d4edda,stroke:#28a745,stroke-width:2px,color:black;
+    classDef logic fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:black;
+    classDef result fill:#cce5ff,stroke:#004085,stroke-width:2px,color:black;
 
-```mermaid
-graph LR
-    A[Camera Input] -->|Frame| B(Face Detection\nRetinaFace)
-    B -->|BBox & Landmarks| C(Face Alignment)
-    C -->|Aligned Face| D(Feature Extraction\nArcFace)
-    D -->|512-D Vector| E{Matching\nCosine Similarity}
-    E -->|Score > Threshold| F[Identified: Name]
-    E -->|Score < Threshold| G[Unknown]
-```
+    %% Nodes
+    Cam(📹 Camera / Video) :::input
+    
+    subgraph AI_Core [🤖 AI Processing Pipeline]
+        Detect(🔍 Face Detection<br/>RetinaFace) :::ai
+        Align(📐 Alignment<br/>Landmarks) :::ai
+        Extract(🧬 Feature Extraction<br/>ArcFace) :::ai
+    end
+
+    subgraph Matching_Logic [⚙️ Verification]
+        DB[(🗄️ Face Database)] :::logic
+        Compare{⚖️ Cosine Similarity} :::logic
+    end
+
+    Result(✅ Attendance Log) :::result
+
+    %% Connections
+    Cam -->|Frame| Detect
+    Detect -->|BBox & 5-Point| Align
+    Align -->|Aligned Face| Extract
+    Extract -->|512-D Embedding| Compare
+    DB -.->|Loaded Vectors| Compare
+    Compare -->|Score > Threshold| Result
+    Compare -- Score < Threshold --> Unknown[❌ Unknown] :::result
 
 1.  **Face Detection:** Quét toàn bộ khung hình để tìm vị trí khuôn mặt.
 2.  **Face Alignment:** Căn chỉnh khuôn mặt dựa trên 5 điểm mốc (mắt, mũi, miệng) để chuẩn hóa góc nhìn.
@@ -148,9 +166,9 @@ pip install -r requirements.txt
 | ![Teacher Window](results/teacher_ui.png) | ![Student Window](results/student_ui.png) |
 ## Kết quả điểm danh ghi nhận
 
-| Giao diện giáo viên |
+| Kết quả khi giáo viên điểm danh thành công|
 | :---: |
-| ![Attendance Success](results/attendace_result.png) |
+| ![Attendance Success](results/attendance_result.png) |
 
 
 
