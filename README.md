@@ -49,15 +49,15 @@ Face-Recognition-Attendance/
 ├── app/                        # Source code chính
 │   ├── ui/                     # Giao diện QML (.qml files)
 │   ├── core/                   # Logic xử lý AI (Face Engine)
-│   ├── controllers/            # Kết nối giữa UI và Logic (Signals/Slots)
+│   ├── controllers/            # Kết nối giữa UI và Logic 
 │   ├── database/               # Quản lý file log và database
-│   └── config.py               # Các tham số cấu hình (Threshold, Camera ID)
+│   └── config.py               # Các tham số cấu hình 
 ├── assets/                     # Tài nguyên tĩnh (Icons, Images)
 ├── data/                       # Dữ liệu Runtime
 │   ├── raw_faces/              # Ảnh chụp mẫu khi đăng ký
 │   ├── face_data.pkl           # File chứa Embeddings (Encoded Features)
 │   └── attendance_log.csv      # File kết quả điểm danh
-├── dataset/                    # Thư mục chứa dữ liệu train (nếu có)
+├── dataset/                    # Thư mục chứa dữ liệu train 
 ├── scripts/                    # Các script tiện ích
 ├── main.py                     # Entry point của ứng dụng
 ├── requirements.txt            # Danh sách thư viện
@@ -130,28 +130,29 @@ pip install -r requirements.txt
 
 2.  **Đăng ký sinh viên mới:**
 
-      * Vào Tab **"Quản lý sinh viên"**.
-      * Nhập MSSV và Họ Tên.
-      * Nhấn **"Chụp ảnh mẫu"** (Hệ thống sẽ chụp 5-10 ảnh ở các góc độ).
+      * Vào Tab **"Thêm sinh viên"**.
+      * Nhập MSSV, Họ Tên, Ngày tháng năm sinh và tên lớp.
+      * Nhấn **"Chụp ảnh"** (Hệ thống sẽ chụp và lưu vào database).
       * Nhấn **"Cập nhật dữ liệu"** (Train) để tạo vector đặc trưng.
 
 3.  **Điểm danh:**
 
       * Quay lại màn hình **Dashboard**.
       * Hệ thống tự động nhận diện và hiển thị thông tin lên màn hình.
-      * Kết quả được lưu tự động vào `data/attendance_log.csv`.
+      * Kết quả được lưu tự động vào hệ thống.
 
 ## 📸 Demo Hình Ảnh (Screenshots)
 
+| Giao diện giáo viên | Giao diện sinh viên |
+| :---: | :---: |
+| ![Teacher Window](results/teacher_ui.png) | ![Student Window](results/student_ui.png) |
+## Kết quả điểm danh ghi nhận
 
-## 🗺️ Roadmap
+| Giao diện giáo viên |
+| :---: |
+| ![Attendance Success](results/attendace_result.png) |
 
-  - [x] Tích hợp Core AI (RetinaFace, ArcFace).
-  - [x] Hoàn thiện GUI cơ bản với QML.
-  - [x] Xuất báo cáo Excel.
-  - [ ] Tích hợp Database SQLite/MySQL.
-  - [ ] Xây dựng Web Dashboard để xem báo cáo từ xa.
-  - [ ] Gửi thông báo điểm danh qua Telegram/Email.
+
 
 ## 🤝 Đóng Góp (Contributing)
 
@@ -164,7 +165,4 @@ Dự án thuộc bản quyền **MIT License**.
 
 -----
 
-**Author:** [Devk1ngz](https://www.google.com/search?q=https://github.com/devk1ngz)
-
-```
-```
+**Author:** [Devk1ngz](https://github.com/devk1ngz)
