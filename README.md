@@ -64,37 +64,9 @@ Face-Recognition-Attendance/
 
 ## 🧠 Nguyên Lý Hoạt Động (Workflow)
 
-flowchart LR
-    %% Định nghĩa Style
-    classDef input fill:#f9f,stroke:#333,stroke-width:2px,color:black;
-    classDef ai fill:#d4edda,stroke:#28a745,stroke-width:2px,color:black;
-    classDef logic fill:#fff3cd,stroke:#ffc107,stroke-width:2px,color:black;
-    classDef result fill:#cce5ff,stroke:#004085,stroke-width:2px,color:black;
+Hệ thống hoạt động dựa trên luồng xử lý dữ liệu (pipeline) gồm 4 giai đoạn chính, kết hợp giữa mô hình phát hiện (Detection) và nhận diện (Recognition):
 
-    %% Nodes
-    Cam(📹 Camera / Video) :::input
-    
-    subgraph AI_Core [🤖 AI Processing Pipeline]
-        Detect(🔍 Face Detection<br/>RetinaFace) :::ai
-        Align(📐 Alignment<br/>Landmarks) :::ai
-        Extract(🧬 Feature Extraction<br/>ArcFace) :::ai
-    end
-
-    subgraph Matching_Logic [⚙️ Verification]
-        DB[(🗄️ Face Database)] :::logic
-        Compare{⚖️ Cosine Similarity} :::logic
-    end
-
-    Result(✅ Attendance Log) :::result
-
-    %% Connections
-    Cam -->|Frame| Detect
-    Detect -->|BBox & 5-Point| Align
-    Align -->|Aligned Face| Extract
-    Extract -->|512-D Embedding| Compare
-    DB -.->|Loaded Vectors| Compare
-    Compare -->|Score > Threshold| Result
-    Compare -- Score < Threshold --> Unknown[❌ Unknown] :::result
+![Face Recognition Pipeline Diagram](results/pipeline_flow.png)
 
 1.  **Face Detection:** Quét toàn bộ khung hình để tìm vị trí khuôn mặt.
 2.  **Face Alignment:** Căn chỉnh khuôn mặt dựa trên 5 điểm mốc (mắt, mũi, miệng) để chuẩn hóa góc nhìn.
